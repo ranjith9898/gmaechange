@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="ab223dba-5f59-4981-aaf8-e336a9115391" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="fuckFlow" doc:id="b0ec1e9b-fa34-4b6c-a446-e285d2ad08ec" >
+		<http:listener doc:name="Listener" doc:id="ed474766-c290-48c5-8452-b8498564ebc4" config-ref="HTTP_Listener_config" path="/fuckoff"/>
+		<logger level="INFO" doc:name="Logger" doc:id="730bcf43-c60f-4315-b417-9ee446b69332" />
+	</flow>
+</mule>
